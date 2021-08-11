@@ -6,14 +6,16 @@ import (
 	"strings"
 )
 
-const ticketLength = 6
+const (
+	TicketLength = 6
+)
 
-func isTicketHappy(i string) bool {
-	if len(i) != ticketLength {
+func IsTicketHappy(i string) bool {
+	if len(i) != TicketLength {
 		log.Fatalln("Ticket must have 6 digits")
 	}
 	symbols := strings.Split(i, "")
-	ints := make([]int, ticketLength)
+	ints := make([]int, TicketLength)
 	for k, v := range symbols {
 		intValue, err := strconv.Atoi(v)
 		if err != nil {
@@ -21,8 +23,8 @@ func isTicketHappy(i string) bool {
 		}
 		ints[k] = intValue
 	}
-	firstPart := ints[:ticketLength/2]
-	lastPart := ints[ticketLength/2:]
+	firstPart := ints[:TicketLength/2]
+	lastPart := ints[TicketLength/2:]
 	return sum(firstPart) == sum(lastPart)
 }
 

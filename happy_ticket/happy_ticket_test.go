@@ -33,7 +33,7 @@ func Test_isTicketHappy(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := isTicketHappy(tt.args.i); got != tt.want {
+			if got := IsTicketHappy(tt.args.i); got != tt.want {
 				t.Errorf("isTicketHappy() = %v, want %v", got, tt.want)
 			}
 		})
